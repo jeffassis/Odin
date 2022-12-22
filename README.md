@@ -2,13 +2,13 @@
 
 ## Sobre o projeto
 
-ODIN é uma aplicação construida para treinamento na linguagem de programação C#.
+ODIN é uma aplicação construida para treinamento de C# e SQL. 
 A aplicação consiste em gerenciar uma escola com as rotinas e necessidades que a mesma precisa.
 
 # Tecnologias utilizadas
 ## Back end
-- C# - linguagem nativa
-- SQLite - Banco de dados
+- C# 
+- SQLite3 - Banco de dados
 - iTextField - Biblioteca de geração de relátorios
 
 ## Front end
@@ -18,6 +18,9 @@ A aplicação consiste em gerenciar uma escola com as rotinas e necessidades que a
 
 ## Implantação em produção
 - SQLiteStudio
+- Visual Studio Community 2022
+- Git v3.9
+- Github
 
 # Como executar o projeto
 ## Back end
@@ -30,11 +33,8 @@ git clone https://github.com/jeffassis/Odin.git
 ## Front end web
 Pré-requisitos: SDK .NET-6.0
 
-```bash
 # Criar sistema com dependencia do Projeto
 dotnet new winforms
-# Executar projeto
-dotnet run
 ```
 
 # Feature exploradas
