@@ -55,5 +55,11 @@ namespace Project_Odin
             F_Responsavel f_Responsavel = new F_Responsavel();
             abreForm(1, f_Responsavel);
         }
+
+        private void alunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Aluno f_Aluno = new F_Aluno();
+            abreForm(1, f_Aluno);
+        }
     }
 }

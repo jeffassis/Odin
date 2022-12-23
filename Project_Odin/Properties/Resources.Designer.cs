@@ -143,6 +143,16 @@ namespace Project_Odin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_24 {
+            get {
+                object obj = ResourceManager.GetObject("photo_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_logado {
             get {
                 object obj = ResourceManager.GetObject("user_logado", resourceCulture);

@@ -118,20 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bt_novo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bt_novo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cadeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cadeado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bt_fechar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bt_fechar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bt_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bt_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bt_update_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bt_update_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_logado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_logado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bt_update_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bt_update_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bt_novo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bt_novo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="led_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\led_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,7 +145,7 @@
   <data name="bt_save_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bt_save_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bt_fechar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bt_fechar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photo_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

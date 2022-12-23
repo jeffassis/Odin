@@ -45,7 +45,7 @@ namespace Project_Odin
                 txt_nome.Text = dt.Rows[0].Field<string>("nome");
                 txt_rg.Text = dt.Rows[0].Field<string>("rg");
                 mtb_cpf.Text = dt.Rows[0].Field<string>("cpf");
-                mtb_telefone.Text = dt.Rows[0].Field<string>("cpf");
+                mtb_telefone.Text = dt.Rows[0].Field<string>("telefone");
                 cb_parentesco.Text = dt.Rows[0].Field<string>("parentesco");
 
                 dgv_responsavel.Columns[1].Width = 160;
@@ -91,7 +91,7 @@ namespace Project_Odin
 
         private void bt_update_Click(object sender, EventArgs e)
         {
-            // Query para inserir dados
+            // Query para atualizar dados
             string query = "";
             if (txt_nome.Text == "")
             {
