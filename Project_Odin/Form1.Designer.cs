@@ -30,15 +30,18 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Cadastro = new System.Windows.Forms.ToolStripMenuItem();
+            this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.responsáveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_nomeUsuario = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_acesso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,9 +61,55 @@
             // 
             // Cadastro
             // 
+            this.Cadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alunosToolStripMenuItem,
+            this.responsáveisToolStripMenuItem,
+            this.professoresToolStripMenuItem});
             this.Cadastro.Name = "Cadastro";
             this.Cadastro.Size = new System.Drawing.Size(66, 20);
             this.Cadastro.Text = "Cadastro";
+            // 
+            // alunosToolStripMenuItem
+            // 
+            this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
+            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alunosToolStripMenuItem.Text = "Alunos";
+            // 
+            // responsáveisToolStripMenuItem
+            // 
+            this.responsáveisToolStripMenuItem.Name = "responsáveisToolStripMenuItem";
+            this.responsáveisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.responsáveisToolStripMenuItem.Text = "Responsável";
+            this.responsáveisToolStripMenuItem.Click += new System.EventHandler(this.responsáveisToolStripMenuItem_Click);
+            // 
+            // professoresToolStripMenuItem
+            // 
+            this.professoresToolStripMenuItem.Name = "professoresToolStripMenuItem";
+            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.professoresToolStripMenuItem.Text = "Professores";
+            // 
+            // lOGINToolStripMenuItem
+            // 
+            this.lOGINToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logONToolStripMenuItem,
+            this.logOFFToolStripMenuItem});
+            this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
+            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.lOGINToolStripMenuItem.Text = "LOGIN";
+            // 
+            // logONToolStripMenuItem
+            // 
+            this.logONToolStripMenuItem.Name = "logONToolStripMenuItem";
+            this.logONToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.logONToolStripMenuItem.Text = "LogON";
+            this.logONToolStripMenuItem.Click += new System.EventHandler(this.logONToolStripMenuItem_Click);
+            // 
+            // logOFFToolStripMenuItem
+            // 
+            this.logOFFToolStripMenuItem.Name = "logOFFToolStripMenuItem";
+            this.logOFFToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.logOFFToolStripMenuItem.Text = "LogOFF";
+            this.logOFFToolStripMenuItem.Click += new System.EventHandler(this.logOFFToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -121,29 +170,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lOGINToolStripMenuItem
-            // 
-            this.lOGINToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logONToolStripMenuItem,
-            this.logOFFToolStripMenuItem});
-            this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
-            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.lOGINToolStripMenuItem.Text = "LOGIN";
-            // 
-            // logONToolStripMenuItem
-            // 
-            this.logONToolStripMenuItem.Name = "logONToolStripMenuItem";
-            this.logONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logONToolStripMenuItem.Text = "LogON";
-            this.logONToolStripMenuItem.Click += new System.EventHandler(this.logONToolStripMenuItem_Click);
-            // 
-            // logOFFToolStripMenuItem
-            // 
-            this.logOFFToolStripMenuItem.Name = "logOFFToolStripMenuItem";
-            this.logOFFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.logOFFToolStripMenuItem.Text = "LogOFF";
-            this.logOFFToolStripMenuItem.Click += new System.EventHandler(this.logOFFToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -183,5 +209,8 @@
         private ToolStripMenuItem lOGINToolStripMenuItem;
         private ToolStripMenuItem logONToolStripMenuItem;
         private ToolStripMenuItem logOFFToolStripMenuItem;
+        private ToolStripMenuItem alunosToolStripMenuItem;
+        private ToolStripMenuItem responsáveisToolStripMenuItem;
+        private ToolStripMenuItem professoresToolStripMenuItem;
     }
 }

@@ -20,7 +20,7 @@ namespace Project_Odin
             form1 = f;
         }
 
-        // Funcaoo de validacao da entrada de user no sistema 
+        // Funcao de validacao da entrada de user no sistema 
         private void bt_entrar_Click(object sender, EventArgs e)
         {
             string username = txt_usuario.Text;
@@ -29,7 +29,7 @@ namespace Project_Odin
             // Verifica se os campos estão vazios
             if (username == "" || senha == "")
             {
-                MessageBox.Show("Campos não podem ser vazios!");
+                MessageBox.Show("Campos não podem ser vazios!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_usuario.Focus();
                 return;
             }
@@ -49,7 +49,7 @@ namespace Project_Odin
             }
             else
             {
-                MessageBox.Show("Usuário não encontrado");
+                MessageBox.Show("Usuário não encontrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

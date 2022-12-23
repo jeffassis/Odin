@@ -49,5 +49,11 @@ namespace Project_Odin
             Globais.nivel = 0;
             Globais.logado = false;
         }
+
+        private void responsáveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Responsavel f_Responsavel = new F_Responsavel();
+            abreForm(1, f_Responsavel);
+        }
     }
 }

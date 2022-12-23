@@ -71,6 +71,7 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(156, 25);
             this.txt_usuario.TabIndex = 1;
+            this.txt_usuario.Text = "admin";
             // 
             // txt_senha
             // 
@@ -80,6 +81,7 @@
             this.txt_senha.PasswordChar = '*';
             this.txt_senha.Size = new System.Drawing.Size(156, 25);
             this.txt_senha.TabIndex = 2;
+            this.txt_senha.Text = "123";
             // 
             // label1
             // 
@@ -106,7 +108,7 @@
             this.pictureBox1.Image = global::Project_Odin.Properties.Resources.cadeado;
             this.pictureBox1.Location = new System.Drawing.Point(21, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(128, 126);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -116,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(424, 197);
+            this.ClientSize = new System.Drawing.Size(430, 200);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
