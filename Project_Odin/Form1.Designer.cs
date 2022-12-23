@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Cadastro = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuBar = new System.Windows.Forms.MenuStrip();
+            this.MenuCadastro = new System.Windows.Forms.ToolStripMenuItem();
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.responsáveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.logONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,33 +43,37 @@
             this.lbl_acesso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
+            this.MenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuBar
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Cadastro,
-            this.lOGINToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(834, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuBar.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuCadastro,
+            this.MenuRelatorio,
+            this.MenuUsuario,
+            this.MenuLogin});
+            this.MenuBar.Location = new System.Drawing.Point(0, 0);
+            this.MenuBar.Name = "MenuBar";
+            this.MenuBar.Size = new System.Drawing.Size(834, 24);
+            this.MenuBar.TabIndex = 0;
+            this.MenuBar.Text = "menuStrip1";
             // 
-            // Cadastro
+            // MenuCadastro
             // 
-            this.Cadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alunosToolStripMenuItem,
             this.responsáveisToolStripMenuItem,
             this.professoresToolStripMenuItem});
-            this.Cadastro.Name = "Cadastro";
-            this.Cadastro.Size = new System.Drawing.Size(67, 20);
-            this.Cadastro.Text = "Cadastro";
+            this.MenuCadastro.Name = "MenuCadastro";
+            this.MenuCadastro.Size = new System.Drawing.Size(67, 20);
+            this.MenuCadastro.Text = "Cadastro";
             // 
             // alunosToolStripMenuItem
             // 
@@ -90,26 +95,33 @@
             this.professoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.professoresToolStripMenuItem.Text = "Professores";
             // 
-            // lOGINToolStripMenuItem
+            // MenuRelatorio
             // 
-            this.lOGINToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuRelatorio.Name = "MenuRelatorio";
+            this.MenuRelatorio.Size = new System.Drawing.Size(73, 20);
+            this.MenuRelatorio.Text = "Relatórios";
+            // 
+            // MenuLogin
+            // 
+            this.MenuLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MenuLogin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logONToolStripMenuItem,
             this.logOFFToolStripMenuItem});
-            this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
-            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.lOGINToolStripMenuItem.Text = "LOGIN";
+            this.MenuLogin.Name = "MenuLogin";
+            this.MenuLogin.Size = new System.Drawing.Size(61, 20);
+            this.MenuLogin.Text = "LOGIN";
             // 
             // logONToolStripMenuItem
             // 
             this.logONToolStripMenuItem.Name = "logONToolStripMenuItem";
-            this.logONToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.logONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logONToolStripMenuItem.Text = "LogON";
             this.logONToolStripMenuItem.Click += new System.EventHandler(this.logONToolStripMenuItem_Click);
             // 
             // logOFFToolStripMenuItem
             // 
             this.logOFFToolStripMenuItem.Name = "logOFFToolStripMenuItem";
-            this.logOFFToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.logOFFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOFFToolStripMenuItem.Text = "LogOFF";
             this.logOFFToolStripMenuItem.Click += new System.EventHandler(this.logOFFToolStripMenuItem_Click);
             // 
@@ -175,24 +187,39 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // MenuUsuario
+            // 
+            this.MenuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestãoDeUsuáriosToolStripMenuItem});
+            this.MenuUsuario.Name = "MenuUsuario";
+            this.MenuUsuario.Size = new System.Drawing.Size(66, 20);
+            this.MenuUsuario.Text = "Usuários";
+            // 
+            // gestãoDeUsuáriosToolStripMenuItem
+            // 
+            this.gestãoDeUsuáriosToolStripMenuItem.Name = "gestãoDeUsuáriosToolStripMenuItem";
+            this.gestãoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestãoDeUsuáriosToolStripMenuItem.Text = "Gestão de Usuários";
+            this.gestãoDeUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeUsuáriosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 524);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.MenuBar);
             this.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MenuBar;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MenuBar.ResumeLayout(false);
+            this.MenuBar.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -204,19 +231,22 @@
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem Cadastro;
+        private MenuStrip MenuBar;
+        private ToolStripMenuItem MenuCadastro;
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox2;
         public PictureBox pictureBox1;
         public Label lbl_acesso;
         public Label lbl_nomeUsuario;
-        private ToolStripMenuItem lOGINToolStripMenuItem;
+        private ToolStripMenuItem MenuLogin;
         private ToolStripMenuItem logONToolStripMenuItem;
         private ToolStripMenuItem logOFFToolStripMenuItem;
         private ToolStripMenuItem alunosToolStripMenuItem;
         private ToolStripMenuItem responsáveisToolStripMenuItem;
         private ToolStripMenuItem professoresToolStripMenuItem;
+        private ToolStripMenuItem MenuRelatorio;
+        private ToolStripMenuItem MenuUsuario;
+        private ToolStripMenuItem gestãoDeUsuáriosToolStripMenuItem;
     }
 }

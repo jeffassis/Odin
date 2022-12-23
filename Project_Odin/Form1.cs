@@ -61,5 +61,11 @@ namespace Project_Odin
             F_Aluno f_Aluno = new F_Aluno();
             abreForm(1, f_Aluno);
         }
+
+        private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Usuario f_usuario = new F_Usuario();
+            abreForm(2, f_usuario);
+        }
     }
 }

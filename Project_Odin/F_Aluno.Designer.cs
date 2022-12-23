@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mtb_telefone = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
@@ -45,6 +46,8 @@
             this.txt_endereco = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cb_responsavel = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.bt_delete = new System.Windows.Forms.Button();
             this.bt_update = new System.Windows.Forms.Button();
@@ -55,8 +58,7 @@
             this.pb_foto = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cb_sangue = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cb_responsavel = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
@@ -217,6 +219,25 @@
             this.panel1.Size = new System.Drawing.Size(829, 48);
             this.panel1.TabIndex = 29;
             // 
+            // cb_responsavel
+            // 
+            this.cb_responsavel.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cb_responsavel.FormattingEnabled = true;
+            this.cb_responsavel.Location = new System.Drawing.Point(358, 11);
+            this.cb_responsavel.Name = "cb_responsavel";
+            this.cb_responsavel.Size = new System.Drawing.Size(282, 23);
+            this.cb_responsavel.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calisto MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(257, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(95, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Responsável:";
+            // 
             // bt_fechar
             // 
             this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -225,6 +246,7 @@
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(36, 36);
             this.bt_fechar.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.bt_fechar, "Fechar");
             this.bt_fechar.UseVisualStyleBackColor = true;
             this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
             // 
@@ -236,6 +258,7 @@
             this.bt_delete.Name = "bt_delete";
             this.bt_delete.Size = new System.Drawing.Size(36, 36);
             this.bt_delete.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.bt_delete, "remover dados");
             this.bt_delete.UseVisualStyleBackColor = true;
             this.bt_delete.Click += new System.EventHandler(this.bt_delete_Click);
             // 
@@ -247,6 +270,7 @@
             this.bt_update.Name = "bt_update";
             this.bt_update.Size = new System.Drawing.Size(36, 36);
             this.bt_update.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.bt_update, "Atualizar dados");
             this.bt_update.UseVisualStyleBackColor = true;
             this.bt_update.Click += new System.EventHandler(this.bt_update_Click);
             // 
@@ -258,6 +282,7 @@
             this.bt_novo.Name = "bt_novo";
             this.bt_novo.Size = new System.Drawing.Size(36, 36);
             this.bt_novo.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.bt_novo, "Novo registro");
             this.bt_novo.UseVisualStyleBackColor = true;
             this.bt_novo.Click += new System.EventHandler(this.bt_novo_Click);
             // 
@@ -270,6 +295,7 @@
             this.bt_save.Name = "bt_save";
             this.bt_save.Size = new System.Drawing.Size(36, 36);
             this.bt_save.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.bt_save, "Salvar dados");
             this.bt_save.UseVisualStyleBackColor = true;
             this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
             // 
@@ -277,14 +303,14 @@
             // 
             this.dgv_aluno.AllowUserToAddRows = false;
             this.dgv_aluno.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_aluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_aluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_aluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_aluno.EnableHeadersVisualStyles = false;
             this.dgv_aluno.Location = new System.Drawing.Point(259, 24);
@@ -300,12 +326,12 @@
             // 
             // bt_foto
             // 
-            this.bt_foto.Enabled = false;
             this.bt_foto.Image = global::Project_Odin.Properties.Resources.photo_24;
             this.bt_foto.Location = new System.Drawing.Point(754, 336);
             this.bt_foto.Name = "bt_foto";
             this.bt_foto.Size = new System.Drawing.Size(36, 36);
             this.bt_foto.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.bt_foto, "Adicionar foto");
             this.bt_foto.UseVisualStyleBackColor = true;
             // 
             // pb_foto
@@ -344,25 +370,6 @@
             this.cb_sangue.Name = "cb_sangue";
             this.cb_sangue.Size = new System.Drawing.Size(109, 23);
             this.cb_sangue.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calisto MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(257, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 18);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Responsável:";
-            // 
-            // cb_responsavel
-            // 
-            this.cb_responsavel.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_responsavel.FormattingEnabled = true;
-            this.cb_responsavel.Location = new System.Drawing.Point(358, 11);
-            this.cb_responsavel.Name = "cb_responsavel";
-            this.cb_responsavel.Size = new System.Drawing.Size(282, 23);
-            this.cb_responsavel.TabIndex = 11;
             // 
             // F_Aluno
             // 
@@ -436,5 +443,6 @@
         private ComboBox cb_sangue;
         private Label label10;
         private ComboBox cb_responsavel;
+        private ToolTip toolTip1;
     }
 }
