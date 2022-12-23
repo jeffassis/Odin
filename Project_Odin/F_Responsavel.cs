@@ -14,6 +14,7 @@ namespace Project_Odin
     {
         string vqueryDGV = "";
         string idSelecionado = "";
+        DataTable dt = new DataTable();
         public F_Responsavel()
         {
             InitializeComponent();
@@ -70,48 +71,63 @@ namespace Project_Odin
 
         private void bt_save_Click(object sender, EventArgs e)
         {
-            // Query para inserir dados
-            string query = "";
-            if (txt_nome.Text == "")
+            // Verifica se está vazio
+            if (txt_nome.Text == "" || txt_rg.Text == "" || mtb_cpf.Text == "" || cb_parentesco.Text == "" || mtb_telefone.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nome.Focus();
+                return;
+            }
+            // Verifica se o responsavel já existe
+            string addResp = "";
+            string verificaResp = "SELECT nome FROM tb_responsavel WHERE nome='" + txt_nome.Text + "'";
+            dt = Banco.dql(verificaResp);
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Responsável já existe!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                query = "INSERT INTO tb_responsavel (nome, rg, cpf, telefone, parentesco) VALUES('"+txt_nome.Text+"', '"+txt_rg.Text+"', '"+mtb_cpf.Text+"', '"+mtb_telefone.Text+"', '"+cb_parentesco.Text+"')";
+                addResp = "INSERT INTO tb_responsavel (nome, rg, cpf, telefone, parentesco) " +
+                    "VALUES('"+txt_nome.Text+"', '"+txt_rg.Text+"', '"+mtb_cpf.Text+"', '"+mtb_telefone.Text+"', '"+cb_parentesco.Text+"')";
                 MessageBox.Show("Dados inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Banco.dml(query);
+            Banco.dml(addResp);
             // Atualiza novamente o DGV
-            query = @"SELECT id_responsavel as 'ID', nome as 'NOME COMPLETO', rg as 'RG', cpf as 'CPF', telefone as 'TELEFONE', parentesco as 'PARENTESCO' FROM tb_responsavel
-                        ORDER BY nome";
-            dgv_responsavel.DataSource = Banco.dql(query);
+            addResp = @"SELECT id_responsavel as 'ID', nome as 'NOME COMPLETO', rg as 'RG', cpf as 'CPF', telefone as 'TELEFONE', parentesco as 'PARENTESCO'
+                    FROM tb_responsavel ORDER BY nome";
+            dgv_responsavel.DataSource = Banco.dql(addResp);
             bt_save.Enabled=false;
         }
 
         private void bt_update_Click(object sender, EventArgs e)
         {
-            // Query para atualizar dados
-            string query = "";
-            if (txt_nome.Text == "")
+            // Verifica se está vazio
+            if (txt_nome.Text == "" || txt_rg.Text == "" || mtb_cpf.Text == "" || cb_parentesco.Text == "" || mtb_telefone.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nome.Focus();
+                return;
+            }
+            // Verifica se o responsavel já existe
+            string addResp = "";
+            string verificaResp = "SELECT nome FROM tb_responsavel WHERE nome='" + txt_nome.Text + "'";
+            dt = Banco.dql(verificaResp);
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Responsável já existe!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DialogResult res = MessageBox.Show("Confirma Atualização?", "Atualizar dados?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (res == DialogResult.Yes)
-                {
-                    query = @"UPDATE tb_responsavel SET nome='"+txt_nome.Text+"', rg='"+ txt_rg.Text + "', cpf='"+ mtb_cpf.Text + "', telefone='"+ mtb_telefone.Text 
-                                +"', parentesco='"+ cb_parentesco.Text +"' WHERE id_responsavel="+idSelecionado;
-                    MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                addResp = @"UPDATE tb_responsavel SET nome='" + txt_nome.Text + "', rg='" + txt_rg.Text + "', cpf='" + mtb_cpf.Text + "', telefone='" + mtb_telefone.Text
+                                + "', parentesco='" + cb_parentesco.Text + "' WHERE id_responsavel=" + idSelecionado;
+                MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Banco.dml(query);
+            Banco.dml(addResp);
             // Atualiza novamente o DGV
-            query = @"SELECT id_responsavel as 'ID', nome as 'Nome', rg as 'RG', cpf as 'CPF', telefone as 'TELEFONE', parentesco as 'Parentesco' FROM tb_responsavel
-                        ORDER BY nome";
-            dgv_responsavel.DataSource = Banco.dql(query);
+            addResp = @"SELECT id_responsavel as 'ID', nome as 'NOME COMPLETO', rg as 'RG', cpf as 'CPF', telefone as 'TELEFONE', parentesco as 'PARENTESCO'
+                    FROM tb_responsavel ORDER BY nome";
+            dgv_responsavel.DataSource = Banco.dql(addResp);
             bt_save.Enabled = false;
         }
 
