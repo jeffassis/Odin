@@ -2,21 +2,21 @@
 
 ## Sobre o projeto
 
-ODIN È uma aplicaÁ„o construida para treinamento de C# e SQL. 
-A aplicaÁ„o consiste em gerenciar uma escola com as rotinas e necessidades que a mesma precisa.
+ODIN √© uma aplica√ß√£o construida para treinamento de C# e SQL. 
+A aplica√ß√£o consiste em gerenciar uma escola com as rotinas e necessidades que a mesma precisa.
 
 # Tecnologias utilizadas
 ## Back end
 - C# 
 - SQLite3 - Banco de dados
-- iTextField - Biblioteca de geraÁ„o de rel·torios
+- iTextSharp - Biblioteca de gera√ß√£o de rel√°torios
 
 ## Front end
 - C#
 - Windows Forms
 - MessageBox
 
-## ImplantaÁ„o em produÁ„o
+## Implanta√ß√£o em produ√ß√£o
 - SQLiteStudio
 - Visual Studio Community 2022
 - Git v3.9
@@ -24,14 +24,14 @@ A aplicaÁ„o consiste em gerenciar uma escola com as rotinas e necessidades que a
 
 # Como executar o projeto
 ## Back end
-PrÈ-requisitos: .Net6.0
+Pr√©-requisitos: .Net-6.0
 
 ```bash
-# clonar repositÛrio
+# clonar reposit√≥rio
 git clone https://github.com/jeffassis/Odin.git
 
 ## Front end web
-PrÈ-requisitos: SDK .NET-6.0
+Pr√©-requisitos: SDK .NET-6.0
 
 # Criar sistema com dependencia do Projeto
 dotnet new winforms
@@ -40,12 +40,12 @@ dotnet new winforms
 # Feature exploradas
 
 - Utilizar `CRUD`.
-- Estilizar formul·rio.
-- UtilizaÁ„o de um arquivo `Banco` para acesso as funÁıes do `DB`.
-- ValidaÁ„o de usu·rio.
-- UtilizaÁ„o de keybind para acesso r·pido.
-- CriaÁ„o de nivÈis de acesso dentro do sistema.
-- GeraÁ„o de rel·torios iTextSharp.
+- Estilizar formul√°rio.
+- Utiliza√ß√£o de um arquivo `Banco` para acesso as fun√ß√µes do `DB`.
+- Valida√ß√£o de usu√°rio.
+- Utiliza√ß√£o de keybind para acesso r√°pido.
+- Cria√ß√£o de niv√©is de acesso dentro do sistema.
+- Gera√ß√£o de rel√°torios `iTextSharp`.
 - Captura de fotos para perfis de cadastro.
 
 
