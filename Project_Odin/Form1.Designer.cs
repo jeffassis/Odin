@@ -34,6 +34,8 @@
             this.responsáveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.logONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOFFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +45,6 @@
             this.lbl_acesso = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuBar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -71,35 +71,57 @@
             this.alunosToolStripMenuItem,
             this.responsáveisToolStripMenuItem,
             this.professoresToolStripMenuItem});
+            this.MenuCadastro.Image = global::Project_Odin.Properties.Resources.menuCadastro;
             this.MenuCadastro.Name = "MenuCadastro";
-            this.MenuCadastro.Size = new System.Drawing.Size(67, 20);
-            this.MenuCadastro.Text = "Cadastro";
+            this.MenuCadastro.Size = new System.Drawing.Size(88, 20);
+            this.MenuCadastro.Text = "Cadastros";
             // 
             // alunosToolStripMenuItem
             // 
+            this.alunosToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.aluno;
             this.alunosToolStripMenuItem.Name = "alunosToolStripMenuItem";
-            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alunosToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.alunosToolStripMenuItem.Text = "Alunos";
             this.alunosToolStripMenuItem.Click += new System.EventHandler(this.alunosToolStripMenuItem_Click);
             // 
             // responsáveisToolStripMenuItem
             // 
+            this.responsáveisToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.responsavel;
             this.responsáveisToolStripMenuItem.Name = "responsáveisToolStripMenuItem";
-            this.responsáveisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.responsáveisToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.responsáveisToolStripMenuItem.Text = "Responsável";
             this.responsáveisToolStripMenuItem.Click += new System.EventHandler(this.responsáveisToolStripMenuItem_Click);
             // 
             // professoresToolStripMenuItem
             // 
+            this.professoresToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.professor;
             this.professoresToolStripMenuItem.Name = "professoresToolStripMenuItem";
-            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.professoresToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.professoresToolStripMenuItem.Text = "Professores";
             // 
             // MenuRelatorio
             // 
+            this.MenuRelatorio.Image = global::Project_Odin.Properties.Resources.menuReports;
             this.MenuRelatorio.Name = "MenuRelatorio";
-            this.MenuRelatorio.Size = new System.Drawing.Size(73, 20);
+            this.MenuRelatorio.Size = new System.Drawing.Size(89, 20);
             this.MenuRelatorio.Text = "Relatórios";
+            // 
+            // MenuUsuario
+            // 
+            this.MenuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestãoDeUsuáriosToolStripMenuItem});
+            this.MenuUsuario.Image = global::Project_Odin.Properties.Resources.menuUser;
+            this.MenuUsuario.Name = "MenuUsuario";
+            this.MenuUsuario.Size = new System.Drawing.Size(82, 20);
+            this.MenuUsuario.Text = "Usuários";
+            // 
+            // gestãoDeUsuáriosToolStripMenuItem
+            // 
+            this.gestãoDeUsuáriosToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.users;
+            this.gestãoDeUsuáriosToolStripMenuItem.Name = "gestãoDeUsuáriosToolStripMenuItem";
+            this.gestãoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.gestãoDeUsuáriosToolStripMenuItem.Text = "Gestão de Usuários";
+            this.gestãoDeUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeUsuáriosToolStripMenuItem_Click);
             // 
             // MenuLogin
             // 
@@ -107,12 +129,14 @@
             this.MenuLogin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logONToolStripMenuItem,
             this.logOFFToolStripMenuItem});
+            this.MenuLogin.Image = global::Project_Odin.Properties.Resources.sair2;
             this.MenuLogin.Name = "MenuLogin";
-            this.MenuLogin.Size = new System.Drawing.Size(61, 20);
-            this.MenuLogin.Text = "LOGIN";
+            this.MenuLogin.Size = new System.Drawing.Size(66, 20);
+            this.MenuLogin.Text = "Login";
             // 
             // logONToolStripMenuItem
             // 
+            this.logONToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.logON;
             this.logONToolStripMenuItem.Name = "logONToolStripMenuItem";
             this.logONToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logONToolStripMenuItem.Text = "LogON";
@@ -120,6 +144,7 @@
             // 
             // logOFFToolStripMenuItem
             // 
+            this.logOFFToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.logOFF;
             this.logOFFToolStripMenuItem.Name = "logOFFToolStripMenuItem";
             this.logOFFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOFFToolStripMenuItem.Text = "LogOFF";
@@ -186,21 +211,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // MenuUsuario
-            // 
-            this.MenuUsuario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestãoDeUsuáriosToolStripMenuItem});
-            this.MenuUsuario.Name = "MenuUsuario";
-            this.MenuUsuario.Size = new System.Drawing.Size(66, 20);
-            this.MenuUsuario.Text = "Usuários";
-            // 
-            // gestãoDeUsuáriosToolStripMenuItem
-            // 
-            this.gestãoDeUsuáriosToolStripMenuItem.Name = "gestãoDeUsuáriosToolStripMenuItem";
-            this.gestãoDeUsuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestãoDeUsuáriosToolStripMenuItem.Text = "Gestão de Usuários";
-            this.gestãoDeUsuáriosToolStripMenuItem.Click += new System.EventHandler(this.gestãoDeUsuáriosToolStripMenuItem_Click);
             // 
             // Form1
             // 
