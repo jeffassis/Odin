@@ -31,7 +31,8 @@ namespace Project_Odin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            pane_top.BackColor = Color.FromArgb(240, 240, 240);
+            pane_direita.BackColor = Color.FromArgb(215, 215, 215);
         }
 
         private void logONToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +67,12 @@ namespace Project_Odin
         {
             F_Usuario f_usuario = new F_Usuario();
             abreForm(2, f_usuario);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            F_Aluno f_Aluno = new F_Aluno();
+            abreForm(1, f_Aluno);
         }
     }
 }

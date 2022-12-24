@@ -73,6 +73,16 @@ namespace Project_Odin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aluno_64 {
+            get {
+                object obj = ResourceManager.GetObject("aluno_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bt_delete {
             get {
                 object obj = ResourceManager.GetObject("bt_delete", resourceCulture);
@@ -126,6 +136,16 @@ namespace Project_Odin.Properties {
         internal static System.Drawing.Bitmap cadeado {
             get {
                 object obj = ResourceManager.GetObject("cadeado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clock {
+            get {
+                object obj = ResourceManager.GetObject("clock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +216,16 @@ namespace Project_Odin.Properties {
         internal static System.Drawing.Bitmap menuUser {
             get {
                 object obj = ResourceManager.GetObject("menuUser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menuUser1 {
+            get {
+                object obj = ResourceManager.GetObject("menuUser1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
