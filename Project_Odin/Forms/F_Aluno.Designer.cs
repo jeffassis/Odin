@@ -46,7 +46,6 @@
             this.txt_endereco = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_responsavel = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.bt_delete = new System.Windows.Forms.Button();
@@ -97,9 +96,9 @@
             this.label1.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 15);
+            this.label1.Size = new System.Drawing.Size(110, 15);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Nome Completo:";
+            this.label1.Text = "Nome Completo*:";
             // 
             // txt_email
             // 
@@ -115,9 +114,9 @@
             this.label3.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(12, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 18;
-            this.label3.Text = "Endereço:";
+            this.label3.Text = "Endereço*:";
             // 
             // label6
             // 
@@ -172,9 +171,9 @@
             this.label7.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(12, 276);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 15);
+            this.label7.Size = new System.Drawing.Size(114, 15);
             this.label7.TabIndex = 25;
-            this.label7.Text = "Data Nascimento:";
+            this.label7.Text = "Data Nascimento*:";
             // 
             // date_nascimento
             // 
@@ -206,7 +205,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.cb_responsavel);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.bt_fechar);
             this.panel1.Controls.Add(this.bt_delete);
@@ -219,24 +217,15 @@
             this.panel1.Size = new System.Drawing.Size(829, 48);
             this.panel1.TabIndex = 29;
             // 
-            // cb_responsavel
-            // 
-            this.cb_responsavel.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_responsavel.FormattingEnabled = true;
-            this.cb_responsavel.Location = new System.Drawing.Point(358, 11);
-            this.cb_responsavel.Name = "cb_responsavel";
-            this.cb_responsavel.Size = new System.Drawing.Size(282, 23);
-            this.cb_responsavel.TabIndex = 11;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calisto MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(257, 12);
+            this.label10.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(307, 3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 18);
+            this.label10.Size = new System.Drawing.Size(331, 20);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Responsável:";
+            this.label10.Text = "Obs: Campos com (*) não podem ser vazios!";
             // 
             // bt_fechar
             // 
@@ -253,6 +242,7 @@
             // bt_delete
             // 
             this.bt_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_delete.Enabled = false;
             this.bt_delete.Image = global::Project_Odin.Properties.Resources.bt_delete;
             this.bt_delete.Location = new System.Drawing.Point(139, 3);
             this.bt_delete.Name = "bt_delete";
@@ -265,6 +255,7 @@
             // bt_update
             // 
             this.bt_update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_update.Enabled = false;
             this.bt_update.Image = global::Project_Odin.Properties.Resources.bt_update_24;
             this.bt_update.Location = new System.Drawing.Point(97, 3);
             this.bt_update.Name = "bt_update";
@@ -322,7 +313,7 @@
             this.dgv_aluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_aluno.Size = new System.Drawing.Size(453, 347);
             this.dgv_aluno.TabIndex = 9;
-            this.dgv_aluno.SelectionChanged += new System.EventHandler(this.dgv_aluno_SelectionChanged);
+            this.dgv_aluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_aluno_CellClick);
             // 
             // bt_foto
             // 
@@ -441,8 +432,7 @@
         private PictureBox pb_foto;
         private Label label9;
         private ComboBox cb_sangue;
-        private Label label10;
-        private ComboBox cb_responsavel;
         private ToolTip toolTip1;
+        private Label label10;
     }
 }

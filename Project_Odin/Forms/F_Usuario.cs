@@ -33,21 +33,7 @@ namespace Project_Odin
 
         private void dgv_aluno_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridView dgv = (DataGridView)sender;
-            int contlinhas = dgv.SelectedRows.Count;
-            if (contlinhas > 0)
-            {
-                idSelecionado = dgv_user.Rows[dgv_user.SelectedRows[0].Index].Cells[0].Value.ToString();
-                string query = @"SELECT nome_user, username, senha_user, status_user, nivel_user FROM tb_user WHERE id_user=" + idSelecionado;
-                DataTable dt = Banco.dql(query);
-                txt_nome.Text = dt.Rows[0].Field<string>("nome_user");
-                txt_usuario.Text = dt.Rows[0].Field<string>("username");
-                txt_senha.Text = dt.Rows[0].Field<string>("senha_user");
-                cb_status.Text = dt.Rows[0].Field<string>("status_user");
-                n_nivel.Value = dt.Rows[0].Field<Int64>("nivel_user");
-
-                dgv_user.Columns[1].Width = 170;
-            }
+            
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -64,6 +50,8 @@ namespace Project_Odin
             n_nivel.Value = 0;
             txt_nome.Focus();
             bt_save.Enabled = true;
+            bt_update.Enabled = false;
+            bt_delete.Enabled = false;
         }
 
         private void bt_save_Click(object sender, EventArgs e)
@@ -102,20 +90,13 @@ namespace Project_Odin
             // Verifica se está vazio
             string nome = txt_nome.Text;
             string senha = txt_senha.Text;
+            string addUser = "";
             if (nome == "" || senha == "" || cb_status.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nome.Focus();
                 return;
-            }
-            // Verifica se o username já existe
-            string addUser = "";
-            string verificaUser = "SELECT username FROM tb_user WHERE username='" + txt_usuario.Text + "'";
-            dt = Banco.dql(verificaUser);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Username já existe!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }            
             else
             {
                 addUser = @"UPDATE tb_user SET nome_user='"+txt_nome.Text+"', username='"+txt_usuario.Text+"', senha_user='"+txt_senha.Text+"', status_user='"+cb_status.Text+"'" +
@@ -147,6 +128,29 @@ namespace Project_Odin
                 n_nivel.Value = 0;
                 txt_nome.Focus();
                 bt_save.Enabled = false;
+            }
+        }
+
+        private void dgv_user_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            int contlinhas = dgv.SelectedRows.Count;
+            if (contlinhas > 0)
+            {
+                idSelecionado = dgv_user.Rows[dgv_user.SelectedRows[0].Index].Cells[0].Value.ToString();
+                string query = @"SELECT nome_user, username, senha_user, status_user, nivel_user FROM tb_user WHERE id_user=" + idSelecionado;
+                DataTable dt = Banco.dql(query);
+                txt_nome.Text = dt.Rows[0].Field<string>("nome_user");
+                txt_usuario.Text = dt.Rows[0].Field<string>("username");
+                txt_senha.Text = dt.Rows[0].Field<string>("senha_user");
+                cb_status.Text = dt.Rows[0].Field<string>("status_user");
+                n_nivel.Value = dt.Rows[0].Field<Int64>("nivel_user");
+
+                dgv_user.Columns[1].Width = 170;
+
+                bt_save.Enabled = false;
+                bt_update.Enabled = true;
+                bt_delete.Enabled = true;
             }
         }
     }

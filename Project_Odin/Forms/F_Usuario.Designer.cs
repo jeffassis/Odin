@@ -78,6 +78,7 @@
             this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_user.Size = new System.Drawing.Size(308, 189);
             this.dgv_user.TabIndex = 6;
+            this.dgv_user.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_user_CellClick);
             this.dgv_user.SelectionChanged += new System.EventHandler(this.dgv_aluno_SelectionChanged);
             // 
             // txt_nome
@@ -219,6 +220,7 @@
             // bt_delete
             // 
             this.bt_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_delete.Enabled = false;
             this.bt_delete.Image = global::Project_Odin.Properties.Resources.bt_delete;
             this.bt_delete.Location = new System.Drawing.Point(139, 3);
             this.bt_delete.Name = "bt_delete";
@@ -231,6 +233,7 @@
             // bt_update
             // 
             this.bt_update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_update.Enabled = false;
             this.bt_update.Image = global::Project_Odin.Properties.Resources.bt_update_24;
             this.bt_update.Location = new System.Drawing.Point(97, 3);
             this.bt_update.Name = "bt_update";

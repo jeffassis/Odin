@@ -153,6 +153,26 @@ namespace Project_Odin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap disciplina {
+            get {
+                object obj = ResourceManager.GetObject("disciplina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap financeiro {
+            get {
+                object obj = ResourceManager.GetObject("financeiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap led_green {
             get {
                 object obj = ResourceManager.GetObject("led_green", resourceCulture);
@@ -233,6 +253,36 @@ namespace Project_Odin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notas {
+            get {
+                object obj = ResourceManager.GetObject("notas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notas_64 {
+            get {
+                object obj = ResourceManager.GetObject("notas_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pedagogico {
+            get {
+                object obj = ResourceManager.GetObject("pedagogico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_24 {
             get {
                 object obj = ResourceManager.GetObject("photo_24", resourceCulture);
@@ -276,6 +326,16 @@ namespace Project_Odin.Properties {
         internal static System.Drawing.Bitmap sair2 {
             get {
                 object obj = ResourceManager.GetObject("sair2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap turma {
+            get {
+                object obj = ResourceManager.GetObject("turma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

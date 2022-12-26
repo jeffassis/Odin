@@ -33,7 +33,20 @@
             this.alunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.responsáveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuPedagogico = new System.Windows.Forms.ToolStripMenuItem();
+            this.turmasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disciplinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuRelatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.declaraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boletimAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boletimAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.boletimFinalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuFinanceiro = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLogin = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_nomeUsuario = new System.Windows.Forms.Label();
             this.pane_top = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_aluno = new System.Windows.Forms.Button();
             this.pane_direita = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,6 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.bt_nota = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pane_top.SuspendLayout();
@@ -67,7 +81,9 @@
             this.MenuBar.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MenuBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuCadastro,
+            this.MenuPedagogico,
             this.MenuRelatorio,
+            this.MenuFinanceiro,
             this.MenuUsuario,
             this.MenuLogin});
             this.MenuBar.Location = new System.Drawing.Point(0, 0);
@@ -110,12 +126,111 @@
             this.professoresToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.professoresToolStripMenuItem.Text = "Professores";
             // 
+            // MenuPedagogico
+            // 
+            this.MenuPedagogico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.turmasToolStripMenuItem,
+            this.disciplinasToolStripMenuItem,
+            this.horariosToolStripMenuItem,
+            this.notasToolStripMenuItem1});
+            this.MenuPedagogico.Image = global::Project_Odin.Properties.Resources.pedagogico;
+            this.MenuPedagogico.Name = "MenuPedagogico";
+            this.MenuPedagogico.Size = new System.Drawing.Size(95, 20);
+            this.MenuPedagogico.Text = "Pedagógico";
+            // 
+            // turmasToolStripMenuItem
+            // 
+            this.turmasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.turma;
+            this.turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
+            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.turmasToolStripMenuItem.Text = "Turmas";
+            // 
+            // disciplinasToolStripMenuItem
+            // 
+            this.disciplinasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.disciplina;
+            this.disciplinasToolStripMenuItem.Name = "disciplinasToolStripMenuItem";
+            this.disciplinasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.disciplinasToolStripMenuItem.Text = "Disciplinas";
+            // 
+            // horariosToolStripMenuItem
+            // 
+            this.horariosToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.clock;
+            this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
+            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.horariosToolStripMenuItem.Text = "Horários";
+            // 
+            // notasToolStripMenuItem1
+            // 
+            this.notasToolStripMenuItem1.Image = global::Project_Odin.Properties.Resources.notas;
+            this.notasToolStripMenuItem1.Name = "notasToolStripMenuItem1";
+            this.notasToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.notasToolStripMenuItem1.Text = "Notas";
+            // 
             // MenuRelatorio
             // 
+            this.MenuRelatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.documentosToolStripMenuItem,
+            this.notasToolStripMenuItem});
             this.MenuRelatorio.Image = global::Project_Odin.Properties.Resources.menuReports;
             this.MenuRelatorio.Name = "MenuRelatorio";
             this.MenuRelatorio.Size = new System.Drawing.Size(89, 20);
             this.MenuRelatorio.Text = "Relatórios";
+            // 
+            // documentosToolStripMenuItem
+            // 
+            this.documentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.declaraçãoToolStripMenuItem,
+            this.historicosToolStripMenuItem});
+            this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
+            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.documentosToolStripMenuItem.Text = "Documentos";
+            // 
+            // declaraçãoToolStripMenuItem
+            // 
+            this.declaraçãoToolStripMenuItem.Name = "declaraçãoToolStripMenuItem";
+            this.declaraçãoToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.declaraçãoToolStripMenuItem.Text = "Declaração";
+            // 
+            // historicosToolStripMenuItem
+            // 
+            this.historicosToolStripMenuItem.Name = "historicosToolStripMenuItem";
+            this.historicosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.historicosToolStripMenuItem.Text = "Historicos";
+            // 
+            // notasToolStripMenuItem
+            // 
+            this.notasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.boletimAlunoToolStripMenuItem,
+            this.boletimAlunoToolStripMenuItem1,
+            this.boletimFinalToolStripMenuItem});
+            this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.notasToolStripMenuItem.Text = "Notas";
+            // 
+            // boletimAlunoToolStripMenuItem
+            // 
+            this.boletimAlunoToolStripMenuItem.Name = "boletimAlunoToolStripMenuItem";
+            this.boletimAlunoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.boletimAlunoToolStripMenuItem.Text = "Por Disciplina";
+            // 
+            // boletimAlunoToolStripMenuItem1
+            // 
+            this.boletimAlunoToolStripMenuItem1.Name = "boletimAlunoToolStripMenuItem1";
+            this.boletimAlunoToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.boletimAlunoToolStripMenuItem1.Text = "Boletim Aluno";
+            // 
+            // boletimFinalToolStripMenuItem
+            // 
+            this.boletimFinalToolStripMenuItem.Name = "boletimFinalToolStripMenuItem";
+            this.boletimFinalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.boletimFinalToolStripMenuItem.Text = "Boletim Final";
+            // 
+            // MenuFinanceiro
+            // 
+            this.MenuFinanceiro.Image = global::Project_Odin.Properties.Resources.financeiro;
+            this.MenuFinanceiro.Name = "MenuFinanceiro";
+            this.MenuFinanceiro.Size = new System.Drawing.Size(91, 20);
+            this.MenuFinanceiro.Text = "Financeiro";
             // 
             // MenuUsuario
             // 
@@ -209,25 +324,26 @@
             this.pane_top.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pane_top.BackColor = System.Drawing.SystemColors.Control;
-            this.pane_top.Controls.Add(this.button1);
+            this.pane_top.Controls.Add(this.bt_nota);
+            this.pane_top.Controls.Add(this.bt_aluno);
             this.pane_top.Location = new System.Drawing.Point(0, 27);
             this.pane_top.Name = "pane_top";
             this.pane_top.Size = new System.Drawing.Size(688, 75);
             this.pane_top.TabIndex = 2;
             // 
-            // button1
+            // bt_aluno
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Project_Odin.Properties.Resources.aluno_64;
-            this.button1.Location = new System.Drawing.Point(4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 65);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_aluno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_aluno.FlatAppearance.BorderSize = 0;
+            this.bt_aluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bt_aluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_aluno.Image = global::Project_Odin.Properties.Resources.aluno_64;
+            this.bt_aluno.Location = new System.Drawing.Point(4, 5);
+            this.bt_aluno.Name = "bt_aluno";
+            this.bt_aluno.Size = new System.Drawing.Size(70, 65);
+            this.bt_aluno.TabIndex = 0;
+            this.bt_aluno.UseVisualStyleBackColor = true;
+            this.bt_aluno.Click += new System.EventHandler(this.button1_Click);
             // 
             // pane_direita
             // 
@@ -337,6 +453,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "13:00:00";
             // 
+            // bt_nota
+            // 
+            this.bt_nota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_nota.FlatAppearance.BorderSize = 0;
+            this.bt_nota.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bt_nota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_nota.Image = global::Project_Odin.Properties.Resources.notas_64;
+            this.bt_nota.Location = new System.Drawing.Point(80, 5);
+            this.bt_nota.Name = "bt_nota";
+            this.bt_nota.Size = new System.Drawing.Size(70, 65);
+            this.bt_nota.TabIndex = 1;
+            this.bt_nota.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -388,12 +517,26 @@
         private Panel pane_direita;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Button bt_aluno;
         private Label label4;
         private PictureBox pictureBox3;
         private Label label5;
         private Label label6;
         private PictureBox pictureBox4;
         private Label label7;
+        private ToolStripMenuItem documentosToolStripMenuItem;
+        private ToolStripMenuItem declaraçãoToolStripMenuItem;
+        private ToolStripMenuItem historicosToolStripMenuItem;
+        private ToolStripMenuItem notasToolStripMenuItem;
+        private ToolStripMenuItem boletimAlunoToolStripMenuItem;
+        private ToolStripMenuItem boletimAlunoToolStripMenuItem1;
+        private ToolStripMenuItem boletimFinalToolStripMenuItem;
+        private ToolStripMenuItem MenuPedagogico;
+        private ToolStripMenuItem MenuFinanceiro;
+        private ToolStripMenuItem turmasToolStripMenuItem;
+        private ToolStripMenuItem disciplinasToolStripMenuItem;
+        private ToolStripMenuItem horariosToolStripMenuItem;
+        private ToolStripMenuItem notasToolStripMenuItem1;
+        private Button bt_nota;
     }
 }

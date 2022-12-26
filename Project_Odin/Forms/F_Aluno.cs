@@ -14,6 +14,7 @@ namespace Project_Odin
     {
         string queryDGV = "";
         string idSelecionado = "";
+        DataTable dt = new DataTable();
         public F_Aluno()
         {
             InitializeComponent();
@@ -21,21 +22,6 @@ namespace Project_Odin
 
         private void F_Aluno_Load(object sender, EventArgs e)
         {
-            // Popular comboBox Responsavel
-            string queryResponsavel = @"
-                SELECT
-                    id_responsavel,
-                    nome
-                FROM
-                    tb_responsavel
-                ORDER BY
-                    id_responsavel
-            ";
-            cb_responsavel.Items.Clear();
-            cb_responsavel.DataSource = Banco.dql(queryResponsavel);
-            cb_responsavel.DisplayMember = "nome";
-            cb_responsavel.ValueMember = "id_responsavel";
-
             queryDGV = @"select 
                             id_aluno as 'ID',
                             nome_aluno as 'Aluno',
@@ -71,30 +57,40 @@ namespace Project_Odin
             date_nascimento.Value = DateTime.Today;
             mtb_telefone.Clear();
             cb_sangue.SelectedIndex= -1;
-            cb_responsavel.SelectedIndex= -1;
             txt_nome.Focus();
             bt_save.Enabled = true;
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
         }
 
         private void bt_save_Click(object sender, EventArgs e)
         {
-            // Query para inserir dados
-            string query = "";
-            if (txt_nome.Text == "" || cb_responsavel.Text == "")
+            // Verifica se está vazio
+            if (txt_nome.Text == "" || txt_endereco.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nome.Focus();
+                return;
+            }
+            // Verifica se o Aluno já existe
+            string addAluno = "";
+            string VerificaAluno = "SELECT nome_aluno FROM tb_aluno WHERE nome_aluno='"+txt_nome.Text+"'";
+            dt = Banco.dql(VerificaAluno);
+            if(dt.Rows.Count > 0 )
+            {
+                MessageBox.Show("Aluno já existe!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                query = @"
+                addAluno = @"
                     INSERT INTO
                         tb_aluno
-                            (nome_aluno, email_aluno, endereco_aluno, bairro_aluno, cep_aluno, data_nasc, telefone_aluno, sangue_aluno, responsavel_id)
+                            (nome_aluno, email_aluno, endereco_aluno, bairro_aluno, cep_aluno, data_nasc, telefone_aluno, sangue_aluno)
                     VALUES('"+txt_nome.Text+"', '"+txt_email.Text+"', '"+txt_endereco.Text+"', '"+txt_bairro.Text+"', '"+mtb_cep.Text+"', '"+date_nascimento.Text+"', '"+mtb_telefone.Text+"', " +
-                    "'"+cb_sangue.Text+"', "+cb_responsavel.SelectedValue+")";
+                    "'"+cb_sangue.Text+"')";
                 MessageBox.Show("Dados inseridos com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Banco.dml(query);
+            Banco.dml(addAluno);
             // Atualiza novamente o DGV
             queryDGV = @"select 
                             id_aluno as 'ID',
@@ -106,50 +102,15 @@ namespace Project_Odin
                             tb_aluno";
             dgv_aluno.DataSource = Banco.dql(queryDGV);
             bt_save.Enabled = false;
-        }
-
-        private void dgv_aluno_SelectionChanged(object sender, EventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            int contlinhas = dgv.SelectedRows.Count;
-            if (contlinhas > 0)
-            {
-                idSelecionado = dgv_aluno.Rows[dgv_aluno.SelectedRows[0].Index].Cells[0].Value.ToString();
-                string query = @"
-                        SELECT
-                            nome_aluno,
-                            email_aluno,
-                            endereco_aluno, 
-                            bairro_aluno, 
-                            cep_aluno, 
-                            data_nasc, 
-                            telefone_aluno, 
-                            sangue_aluno,
-                            responsavel_id
-                        FROM 
-                            tb_aluno                           
-                        WHERE id_aluno=" + idSelecionado;
-                DataTable dt = Banco.dql(query);
-                txt_nome.Text = dt.Rows[0].Field<string>("nome_aluno");
-                txt_email.Text = dt.Rows[0].Field<string>("email_aluno");
-                txt_endereco.Text = dt.Rows[0].Field<string>("endereco_aluno");
-                txt_bairro.Text = dt.Rows[0].Field<string>("bairro_aluno");
-                mtb_cep.Text = dt.Rows[0].Field<string>("cep_aluno");
-                date_nascimento.Text = dt.Rows[0].Field<string>("data_nasc");
-                mtb_telefone.Text = dt.Rows[0].Field<string>("telefone_aluno");
-                cb_sangue.Text = dt.Rows[0].Field<string>("sangue_aluno");                
-                cb_responsavel.SelectedValue = dt.Rows[0].Field<Int64>("responsavel_id").ToString();                
-
-                // Para manter o espaço na tabela
-                dgv_aluno.Columns[1].Width = 180;
-            }
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
         }
 
         private void bt_update_Click(object sender, EventArgs e)
         {
             // Query para atualizar dados
             string query = "";
-            if (txt_nome.Text == "" || cb_responsavel.Text == "")
+            if (txt_nome.Text == "" || txt_endereco.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -162,7 +123,7 @@ namespace Project_Odin
                         UPDATE tb_aluno SET
                             nome_aluno='" + txt_nome.Text + "', email_aluno='"+txt_email.Text+"', endereco_aluno='"+txt_endereco.Text+"', bairro_aluno='"+txt_bairro.Text+"'," +
                             " cep_aluno='"+mtb_cep.Text+"', data_nasc='"+date_nascimento.Text+"', telefone_aluno='"+mtb_telefone.Text+"', sangue_aluno='"+cb_sangue.Text+"' " +
-                            ", responsavel_id="+cb_responsavel.SelectedValue +" WHERE id_aluno=" + idSelecionado;
+                            " WHERE id_aluno=" + idSelecionado;
                     MessageBox.Show("Dados atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -178,6 +139,8 @@ namespace Project_Odin
                             tb_aluno";
             dgv_aluno.DataSource = Banco.dql(query);
             bt_save.Enabled = false;
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
@@ -189,18 +152,48 @@ namespace Project_Odin
                 string vquery = "DELETE FROM tb_aluno WHERE id_aluno=" + idSelecionado;
                 Banco.dml(vquery);
                 dgv_aluno.Rows.Remove(dgv_aluno.CurrentRow);
+            }
+            bt_save.Enabled = false;
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
+        }
 
-                // Limpa os campos e habilita salvar
-                txt_nome.Clear();
-                txt_email.Clear();
-                txt_endereco.Clear();
-                txt_bairro.Clear();
-                mtb_cep.Clear();
-                date_nascimento.Value = DateTime.Today;
-                mtb_telefone.Clear();
-                cb_sangue.SelectedIndex = -1;
-                cb_responsavel.SelectedIndex = -1;
-                txt_nome.Focus();
+        private void dgv_aluno_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            int contlinhas = dgv.SelectedRows.Count;
+            if (contlinhas > 0)
+            {
+                idSelecionado = dgv_aluno.Rows[dgv_aluno.SelectedRows[0].Index].Cells[0].Value.ToString();
+                string query = @"
+                        SELECT
+                            nome_aluno,
+                            email_aluno,
+                            endereco_aluno, 
+                            bairro_aluno, 
+                            cep_aluno, 
+                            data_nasc, 
+                            telefone_aluno, 
+                            sangue_aluno
+                        FROM 
+                            tb_aluno                           
+                        WHERE id_aluno=" + idSelecionado;
+                DataTable dt = Banco.dql(query);
+                txt_nome.Text = dt.Rows[0].Field<string>("nome_aluno");
+                txt_email.Text = dt.Rows[0].Field<string>("email_aluno");
+                txt_endereco.Text = dt.Rows[0].Field<string>("endereco_aluno");
+                txt_bairro.Text = dt.Rows[0].Field<string>("bairro_aluno");
+                mtb_cep.Text = dt.Rows[0].Field<string>("cep_aluno");
+                date_nascimento.Text = dt.Rows[0].Field<string>("data_nasc");
+                mtb_telefone.Text = dt.Rows[0].Field<string>("telefone_aluno");
+                cb_sangue.Text = dt.Rows[0].Field<string>("sangue_aluno");
+
+                bt_delete.Enabled = true;
+                bt_update.Enabled = true;
+                bt_save.Enabled = false;
+
+                // Para manter o espaço na tabela
+                dgv_aluno.Columns[1].Width = 180;
             }
         }
     }

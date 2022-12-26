@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,14 +136,14 @@
             // 
             this.dgv_responsavel.AllowUserToAddRows = false;
             this.dgv_responsavel.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_responsavel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_responsavel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_responsavel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_responsavel.EnableHeadersVisualStyles = false;
             this.dgv_responsavel.Location = new System.Drawing.Point(284, 26);
@@ -155,7 +155,7 @@
             this.dgv_responsavel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_responsavel.Size = new System.Drawing.Size(424, 257);
             this.dgv_responsavel.TabIndex = 11;
-            this.dgv_responsavel.SelectionChanged += new System.EventHandler(this.dgv_aluno_SelectionChanged);
+            this.dgv_responsavel.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_responsavel_CellClick);
             // 
             // bt_novo
             // 
@@ -185,6 +185,7 @@
             // bt_update
             // 
             this.bt_update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_update.Enabled = false;
             this.bt_update.Image = global::Project_Odin.Properties.Resources.bt_update_24;
             this.bt_update.Location = new System.Drawing.Point(97, 3);
             this.bt_update.Name = "bt_update";
@@ -197,6 +198,7 @@
             // bt_delete
             // 
             this.bt_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_delete.Enabled = false;
             this.bt_delete.Image = global::Project_Odin.Properties.Resources.bt_delete;
             this.bt_delete.Location = new System.Drawing.Point(139, 3);
             this.bt_delete.Name = "bt_delete";

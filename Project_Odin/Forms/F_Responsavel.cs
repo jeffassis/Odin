@@ -34,25 +34,6 @@ namespace Project_Odin
             idSelecionado = dgv_responsavel.Rows[0].Cells[0].Value.ToString();
         }
 
-        private void dgv_aluno_SelectionChanged(object sender, EventArgs e)
-        {
-            DataGridView dgv = (DataGridView)sender;
-            int contlinhas = dgv.SelectedRows.Count;
-            if (contlinhas > 0)
-            {
-                idSelecionado = dgv_responsavel.Rows[dgv_responsavel.SelectedRows[0].Index].Cells[0].Value.ToString();
-                string query = @"SELECT nome, rg, cpf, telefone, parentesco FROM tb_responsavel WHERE id_responsavel=" + idSelecionado;
-                DataTable dt = Banco.dql(query);
-                txt_nome.Text = dt.Rows[0].Field<string>("nome");
-                txt_rg.Text = dt.Rows[0].Field<string>("rg");
-                mtb_cpf.Text = dt.Rows[0].Field<string>("cpf");
-                mtb_telefone.Text = dt.Rows[0].Field<string>("telefone");
-                cb_parentesco.Text = dt.Rows[0].Field<string>("parentesco");
-
-                dgv_responsavel.Columns[1].Width = 160;
-            }
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             Close();
@@ -67,6 +48,8 @@ namespace Project_Odin
             cb_parentesco.SelectedIndex= -1;
             txt_nome.Focus();
             bt_save.Enabled=true;
+            bt_delete.Enabled=false;
+            bt_update.Enabled=false;
         }
 
         private void bt_save_Click(object sender, EventArgs e)
@@ -98,25 +81,20 @@ namespace Project_Odin
                     FROM tb_responsavel ORDER BY nome";
             dgv_responsavel.DataSource = Banco.dql(addResp);
             bt_save.Enabled=false;
+            bt_update.Enabled = false;
+            bt_delete.Enabled = false;
         }
 
         private void bt_update_Click(object sender, EventArgs e)
         {
             // Verifica se está vazio
+            string addResp = "";
             if (txt_nome.Text == "" || txt_rg.Text == "" || mtb_cpf.Text == "" || cb_parentesco.Text == "" || mtb_telefone.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_nome.Focus();
                 return;
-            }
-            // Verifica se o responsavel já existe
-            string addResp = "";
-            string verificaResp = "SELECT nome FROM tb_responsavel WHERE nome='" + txt_nome.Text + "'";
-            dt = Banco.dql(verificaResp);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Responsável já existe!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }            
             else
             {
                 addResp = @"UPDATE tb_responsavel SET nome='" + txt_nome.Text + "', rg='" + txt_rg.Text + "', cpf='" + mtb_cpf.Text + "', telefone='" + mtb_telefone.Text
@@ -129,6 +107,8 @@ namespace Project_Odin
                     FROM tb_responsavel ORDER BY nome";
             dgv_responsavel.DataSource = Banco.dql(addResp);
             bt_save.Enabled = false;
+            bt_update.Enabled = false;
+            bt_delete.Enabled = false;
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
@@ -140,6 +120,31 @@ namespace Project_Odin
                 string vquery = "DELETE FROM tb_responsavel WHERE id_responsavel=" + idSelecionado;
                 Banco.dml(vquery);
                 dgv_responsavel.Rows.Remove(dgv_responsavel.CurrentRow);
+            }
+            bt_save.Enabled = false;
+            bt_update.Enabled = false;
+            bt_delete.Enabled = false;
+        }
+
+        private void dgv_responsavel_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+            int contlinhas = dgv.SelectedRows.Count;
+            if (contlinhas > 0)
+            {
+                idSelecionado = dgv_responsavel.Rows[dgv_responsavel.SelectedRows[0].Index].Cells[0].Value.ToString();
+                string query = @"SELECT nome, rg, cpf, telefone, parentesco FROM tb_responsavel WHERE id_responsavel=" + idSelecionado;
+                DataTable dt = Banco.dql(query);
+                txt_nome.Text = dt.Rows[0].Field<string>("nome");
+                txt_rg.Text = dt.Rows[0].Field<string>("rg");
+                mtb_cpf.Text = dt.Rows[0].Field<string>("cpf");
+                mtb_telefone.Text = dt.Rows[0].Field<string>("telefone");
+                cb_parentesco.Text = dt.Rows[0].Field<string>("parentesco");
+
+                dgv_responsavel.Columns[1].Width = 160;
+                bt_delete.Enabled = true;
+                bt_update.Enabled = true;
+                bt_save.Enabled = false;
             }
         }
     }
