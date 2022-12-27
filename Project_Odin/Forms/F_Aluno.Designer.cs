@@ -65,6 +65,7 @@
             // 
             // mtb_telefone
             // 
+            this.mtb_telefone.Enabled = false;
             this.mtb_telefone.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtb_telefone.Location = new System.Drawing.Point(131, 294);
             this.mtb_telefone.Mask = "(99)99999-9999";
@@ -84,6 +85,7 @@
             // 
             // txt_nome
             // 
+            this.txt_nome.Enabled = false;
             this.txt_nome.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_nome.Location = new System.Drawing.Point(12, 80);
             this.txt_nome.Name = "txt_nome";
@@ -102,6 +104,7 @@
             // 
             // txt_email
             // 
+            this.txt_email.Enabled = false;
             this.txt_email.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_email.Location = new System.Drawing.Point(12, 135);
             this.txt_email.Name = "txt_email";
@@ -130,6 +133,7 @@
             // 
             // txt_bairro
             // 
+            this.txt_bairro.Enabled = false;
             this.txt_bairro.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_bairro.Location = new System.Drawing.Point(12, 235);
             this.txt_bairro.Name = "txt_bairro";
@@ -158,6 +162,7 @@
             // 
             // mtb_cep
             // 
+            this.mtb_cep.Enabled = false;
             this.mtb_cep.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.mtb_cep.Location = new System.Drawing.Point(131, 235);
             this.mtb_cep.Mask = "00.000-000";
@@ -178,6 +183,7 @@
             // date_nascimento
             // 
             this.date_nascimento.CustomFormat = "dd-MM-yyyy";
+            this.date_nascimento.Enabled = false;
             this.date_nascimento.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.date_nascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_nascimento.Location = new System.Drawing.Point(12, 294);
@@ -187,6 +193,7 @@
             // 
             // txt_endereco
             // 
+            this.txt_endereco.Enabled = false;
             this.txt_endereco.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_endereco.Location = new System.Drawing.Point(12, 185);
             this.txt_endereco.Name = "txt_endereco";
@@ -347,6 +354,7 @@
             // 
             // cb_sangue
             // 
+            this.cb_sangue.Enabled = false;
             this.cb_sangue.FormattingEnabled = true;
             this.cb_sangue.Items.AddRange(new object[] {
             "Tipo A+",

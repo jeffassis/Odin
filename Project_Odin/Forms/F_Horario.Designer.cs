@@ -1,6 +1,6 @@
 ﻿namespace Project_Odin.Forms
 {
-    partial class F_Nota
+    partial class F_Horario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgv_nota = new System.Windows.Forms.DataGridView();
+            this.dgv_horario = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.bt_delete = new System.Windows.Forms.Button();
@@ -39,21 +39,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_nota = new System.Windows.Forms.TextBox();
-            this.cb_bimestre = new System.Windows.Forms.ComboBox();
-            this.cb_disciplina = new System.Windows.Forms.ComboBox();
-            this.cb_tipoNota = new System.Windows.Forms.ComboBox();
-            this.cb_aluno = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nota)).BeginInit();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.mtb_descricao = new System.Windows.Forms.MaskedTextBox();
+            this.cb_diaSemana = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgv_nota
+            // dgv_horario
             // 
-            this.dgv_nota.AllowUserToAddRows = false;
-            this.dgv_nota.AllowUserToDeleteRows = false;
+            this.dgv_horario.AllowUserToAddRows = false;
+            this.dgv_horario.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -61,19 +57,19 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_nota.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_nota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nota.EnableHeadersVisualStyles = false;
-            this.dgv_nota.Location = new System.Drawing.Point(13, 125);
-            this.dgv_nota.MultiSelect = false;
-            this.dgv_nota.Name = "dgv_nota";
-            this.dgv_nota.ReadOnly = true;
-            this.dgv_nota.RowHeadersVisible = false;
-            this.dgv_nota.RowTemplate.Height = 25;
-            this.dgv_nota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_nota.Size = new System.Drawing.Size(615, 230);
-            this.dgv_nota.TabIndex = 10;
-            this.dgv_nota.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nota_CellClick);
+            this.dgv_horario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_horario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_horario.EnableHeadersVisualStyles = false;
+            this.dgv_horario.Location = new System.Drawing.Point(12, 96);
+            this.dgv_horario.MultiSelect = false;
+            this.dgv_horario.Name = "dgv_horario";
+            this.dgv_horario.ReadOnly = true;
+            this.dgv_horario.RowHeadersVisible = false;
+            this.dgv_horario.RowTemplate.Height = 25;
+            this.dgv_horario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_horario.Size = new System.Drawing.Size(355, 336);
+            this.dgv_horario.TabIndex = 30;
+            this.dgv_horario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_horario_CellClick);
             // 
             // panel1
             // 
@@ -83,16 +79,16 @@
             this.panel1.Controls.Add(this.bt_novo);
             this.panel1.Controls.Add(this.bt_save);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 374);
+            this.panel1.Location = new System.Drawing.Point(0, 439);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 48);
-            this.panel1.TabIndex = 30;
+            this.panel1.Size = new System.Drawing.Size(381, 48);
+            this.panel1.TabIndex = 31;
             // 
             // bt_fechar
             // 
             this.bt_fechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_fechar.Image = global::Project_Odin.Properties.Resources.bt_fechar_24;
-            this.bt_fechar.Location = new System.Drawing.Point(591, 3);
+            this.bt_fechar.Location = new System.Drawing.Point(336, 3);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(36, 36);
             this.bt_fechar.TabIndex = 9;
@@ -149,126 +145,92 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calisto MT", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Aluno:";
+            this.label1.Size = new System.Drawing.Size(27, 15);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(139, 74);
+            this.label2.Location = new System.Drawing.Point(12, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 15);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Bimestre:";
+            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Descrição:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(12, 74);
+            this.label3.Location = new System.Drawing.Point(194, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 15);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Disciplina:";
+            this.label3.Size = new System.Drawing.Size(94, 15);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Dia da Semana:";
             // 
-            // label4
+            // txt_id
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(492, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 15);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Tipo de Nota:";
+            this.txt_id.Enabled = false;
+            this.txt_id.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_id.Location = new System.Drawing.Point(45, 7);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(59, 26);
+            this.txt_id.TabIndex = 3;
+            this.txt_id.TabStop = false;
             // 
-            // label5
+            // mtb_descricao
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(498, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 19);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Nota:";
+            this.mtb_descricao.Enabled = false;
+            this.mtb_descricao.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.mtb_descricao.Location = new System.Drawing.Point(12, 63);
+            this.mtb_descricao.Mask = "00:00 - 00:00";
+            this.mtb_descricao.Name = "mtb_descricao";
+            this.mtb_descricao.Size = new System.Drawing.Size(100, 26);
+            this.mtb_descricao.TabIndex = 1;
+            this.mtb_descricao.ValidatingType = typeof(System.DateTime);
             // 
-            // txt_nota
+            // cb_diaSemana
             // 
-            this.txt_nota.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_nota.Location = new System.Drawing.Point(553, 90);
-            this.txt_nota.Name = "txt_nota";
-            this.txt_nota.Size = new System.Drawing.Size(74, 29);
-            this.txt_nota.TabIndex = 36;
+            this.cb_diaSemana.Enabled = false;
+            this.cb_diaSemana.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cb_diaSemana.FormattingEnabled = true;
+            this.cb_diaSemana.Items.AddRange(new object[] {
+            "SEGUNDA-FEIRA",
+            "TERÇA-FEIRA",
+            "QUARTA-FEIRA",
+            "QUINTA-FEIRA",
+            "SEXTA-FEIRA",
+            "INTERVALO"});
+            this.cb_diaSemana.Location = new System.Drawing.Point(194, 62);
+            this.cb_diaSemana.Name = "cb_diaSemana";
+            this.cb_diaSemana.Size = new System.Drawing.Size(173, 27);
+            this.cb_diaSemana.TabIndex = 2;
             // 
-            // cb_bimestre
-            // 
-            this.cb_bimestre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_bimestre.FormattingEnabled = true;
-            this.cb_bimestre.Location = new System.Drawing.Point(139, 92);
-            this.cb_bimestre.Name = "cb_bimestre";
-            this.cb_bimestre.Size = new System.Drawing.Size(174, 29);
-            this.cb_bimestre.TabIndex = 38;
-            // 
-            // cb_disciplina
-            // 
-            this.cb_disciplina.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_disciplina.FormattingEnabled = true;
-            this.cb_disciplina.Location = new System.Drawing.Point(12, 92);
-            this.cb_disciplina.Name = "cb_disciplina";
-            this.cb_disciplina.Size = new System.Drawing.Size(121, 29);
-            this.cb_disciplina.TabIndex = 39;
-            // 
-            // cb_tipoNota
-            // 
-            this.cb_tipoNota.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_tipoNota.FormattingEnabled = true;
-            this.cb_tipoNota.Items.AddRange(new object[] {
-            "Provas",
-            "Recuperação"});
-            this.cb_tipoNota.Location = new System.Drawing.Point(492, 37);
-            this.cb_tipoNota.Name = "cb_tipoNota";
-            this.cb_tipoNota.Size = new System.Drawing.Size(135, 29);
-            this.cb_tipoNota.TabIndex = 40;
-            // 
-            // cb_aluno
-            // 
-            this.cb_aluno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cb_aluno.FormattingEnabled = true;
-            this.cb_aluno.Location = new System.Drawing.Point(13, 37);
-            this.cb_aluno.Name = "cb_aluno";
-            this.cb_aluno.Size = new System.Drawing.Size(300, 29);
-            this.cb_aluno.TabIndex = 41;
-            this.cb_aluno.TextChanged += new System.EventHandler(this.cb_aluno_TextChanged);
-            // 
-            // F_Nota
+            // F_Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 422);
-            this.Controls.Add(this.cb_aluno);
-            this.Controls.Add(this.cb_tipoNota);
-            this.Controls.Add(this.cb_disciplina);
-            this.Controls.Add(this.cb_bimestre);
-            this.Controls.Add(this.txt_nota);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(381, 487);
+            this.Controls.Add(this.cb_diaSemana);
+            this.Controls.Add(this.mtb_descricao);
+            this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgv_horario);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgv_nota);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "F_Nota";
+            this.Name = "F_Horario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lançamento de Notas";
-            this.Load += new System.EventHandler(this.F_Nota_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nota)).EndInit();
+            this.Text = "Horário";
+            this.Load += new System.EventHandler(this.F_Horario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_horario)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -277,7 +239,7 @@
 
         #endregion
 
-        private DataGridView dgv_nota;
+        private DataGridView dgv_horario;
         private Panel panel1;
         private Button bt_fechar;
         private Button bt_delete;
@@ -287,12 +249,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
-        private Label label5;
-        private TextBox txt_nota;
-        private ComboBox cb_bimestre;
-        private ComboBox cb_disciplina;
-        private ComboBox cb_tipoNota;
-        private ComboBox cb_aluno;
+        private TextBox txt_id;
+        private MaskedTextBox mtb_descricao;
+        private ComboBox cb_diaSemana;
     }
 }

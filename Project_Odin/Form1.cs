@@ -88,5 +88,11 @@ namespace Project_Odin
             F_Nota f_nota = new F_Nota();
             abreForm(1, f_nota);
         }
+
+        private void horariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Horario f_horario = new F_Horario();
+            abreForm(1, f_horario);
+        }
     }
 }

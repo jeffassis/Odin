@@ -43,9 +43,9 @@
             this.declaraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.boletimAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.boletimAlunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.boletimFinalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.boletimAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuFinanceiro = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.gestãoDeUsuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,6 +158,7 @@
             this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
             this.horariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.horariosToolStripMenuItem.Text = "Horários";
+            this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
             // 
             // notasToolStripMenuItem1
             // 
@@ -201,18 +202,12 @@
             // notasToolStripMenuItem
             // 
             this.notasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.boletimAlunoToolStripMenuItem,
             this.boletimAlunoToolStripMenuItem1,
-            this.boletimFinalToolStripMenuItem});
+            this.boletimFinalToolStripMenuItem,
+            this.boletimAlunoToolStripMenuItem});
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
             this.notasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.notasToolStripMenuItem.Text = "Notas";
-            // 
-            // boletimAlunoToolStripMenuItem
-            // 
-            this.boletimAlunoToolStripMenuItem.Name = "boletimAlunoToolStripMenuItem";
-            this.boletimAlunoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.boletimAlunoToolStripMenuItem.Text = "Por Disciplina";
             // 
             // boletimAlunoToolStripMenuItem1
             // 
@@ -225,6 +220,12 @@
             this.boletimFinalToolStripMenuItem.Name = "boletimFinalToolStripMenuItem";
             this.boletimFinalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.boletimFinalToolStripMenuItem.Text = "Boletim Final";
+            // 
+            // boletimAlunoToolStripMenuItem
+            // 
+            this.boletimAlunoToolStripMenuItem.Name = "boletimAlunoToolStripMenuItem";
+            this.boletimAlunoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.boletimAlunoToolStripMenuItem.Text = "Por Disciplina";
             // 
             // MenuFinanceiro
             // 

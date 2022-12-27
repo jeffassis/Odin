@@ -48,19 +48,12 @@ namespace Project_Odin
 
         private void bt_novo_Click(object sender, EventArgs e)
         {
-            // Limpa os campos e habilita salvar
-            txt_nome.Clear();
-            txt_email.Clear();
-            txt_endereco.Clear();
-            txt_bairro.Clear();
-            mtb_cep.Clear();
-            date_nascimento.Value = DateTime.Today;
-            mtb_telefone.Clear();
-            cb_sangue.SelectedIndex= -1;
-            txt_nome.Focus();
+            Limpar();
+            AtivaCampos();
             bt_save.Enabled = true;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
+            
         }
 
         private void bt_save_Click(object sender, EventArgs e)
@@ -101,6 +94,8 @@ namespace Project_Odin
                           from
                             tb_aluno";
             dgv_aluno.DataSource = Banco.dql(queryDGV);
+            Limpar();
+            DesativaCampos();
             bt_save.Enabled = false;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
@@ -138,6 +133,8 @@ namespace Project_Odin
                           from
                             tb_aluno";
             dgv_aluno.DataSource = Banco.dql(query);
+            Limpar();
+            DesativaCampos();
             bt_save.Enabled = false;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
@@ -153,9 +150,49 @@ namespace Project_Odin
                 Banco.dml(vquery);
                 dgv_aluno.Rows.Remove(dgv_aluno.CurrentRow);
             }
+            Limpar();
+            DesativaCampos();
             bt_save.Enabled = false;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
+        }
+
+        private void DesativaCampos()
+        {
+            txt_nome.Enabled = false;
+            txt_email.Enabled = false;
+            txt_endereco.Enabled = false;
+            txt_bairro.Enabled = false;
+            mtb_cep.Enabled = false;
+            date_nascimento.Enabled = false;
+            mtb_telefone.Enabled = false;
+            cb_sangue.Enabled = false;
+        }
+
+        private void AtivaCampos()
+        {
+            txt_nome.Enabled = true;
+            txt_email.Enabled= true;
+            txt_endereco.Enabled= true;
+            txt_bairro.Enabled= true;
+            mtb_cep.Enabled= true;
+            date_nascimento.Enabled= true;
+            mtb_telefone.Enabled= true;
+            cb_sangue.Enabled= true;
+            txt_nome.Focus();
+        }
+
+        private void Limpar()
+        {
+            txt_nome.Clear();
+            txt_email.Clear();
+            txt_endereco.Clear();
+            txt_bairro.Clear();
+            mtb_cep.Clear();
+            date_nascimento.Value = DateTime.Today;
+            mtb_telefone.Clear();
+            cb_sangue.SelectedIndex = -1;
+            txt_nome.Focus();
         }
 
         private void dgv_aluno_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -191,6 +228,8 @@ namespace Project_Odin
                 bt_delete.Enabled = true;
                 bt_update.Enabled = true;
                 bt_save.Enabled = false;
+
+                AtivaCampos();
 
                 // Para manter o espaço na tabela
                 dgv_aluno.Columns[1].Width = 180;

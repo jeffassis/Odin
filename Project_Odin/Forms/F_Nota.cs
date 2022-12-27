@@ -17,7 +17,6 @@ namespace Project_Odin.Forms
     public partial class F_Nota : Form
     {
         string idSelecionado;
-        string vqueryDGV;
         DataTable dt = new DataTable();
         public F_Nota()
         {
@@ -26,6 +25,21 @@ namespace Project_Odin.Forms
 
         private void F_Nota_Load(object sender, EventArgs e)
         {
+            // Popular comboBox Aluno
+            string queryAluno = @"
+                SELECT
+                    id_aluno,
+                    nome_aluno
+                FROM
+                    tb_aluno
+                ORDER BY
+                    nome_aluno
+            ";
+            cb_aluno.Items.Clear();
+            cb_aluno.DataSource = Banco.dql(queryAluno);
+            cb_aluno.DisplayMember = "nome_aluno";
+            cb_aluno.ValueMember = "id_aluno";
+
             // Popular comboBox Disciplina
             string queryDisc = @"
                 SELECT
@@ -57,7 +71,7 @@ namespace Project_Odin.Forms
             cb_bimestre.ValueMember = "id_bimestre";
         }
 
-        // Popula o DataGridView com aluno pesquisado no txt_nome
+        // Popula o DataGridView com aluno pesquisado no cb_aluno
         private void BuscarNome()
         {
             DataTable dt = new DataTable();
@@ -86,7 +100,7 @@ namespace Project_Odin.Forms
                     nome_aluno
             ";
             cmd = new SQLiteCommand(sql, vcon);
-            cmd.Parameters.AddWithValue("@nome", txt_nome.Text + "%");
+            cmd.Parameters.AddWithValue("@nome", cb_aluno.Text + "%");
             SQLiteDataAdapter da = new SQLiteDataAdapter();
             da.SelectCommand = cmd;
             da.Fill(dt);
@@ -102,19 +116,14 @@ namespace Project_Odin.Forms
             Close();
         }
 
-        private void txt_nome_TextChanged(object sender, EventArgs e)
-        {
-            BuscarNome();
-        }
-
         private void bt_novo_Click(object sender, EventArgs e)
         {
-            txt_nome.Clear();
+            cb_aluno.SelectedIndex= -1;
             cb_disciplina.SelectedIndex = -1;
             cb_bimestre.SelectedIndex = -1;
             cb_tipoNota.SelectedIndex = -1;
             txt_nota.Clear();
-            txt_nome.Focus();
+            cb_aluno.Focus();
             bt_save.Enabled = true;
             bt_update.Enabled = false;
             bt_delete.Enabled = false;
@@ -123,23 +132,21 @@ namespace Project_Odin.Forms
         private void bt_save_Click(object sender, EventArgs e)
         {
             // Verifica se está vazio
-            if (txt_nome.Text == "" || txt_nota.Text == "" || cb_disciplina.Text == "")
+            if (cb_aluno.Text == "" || txt_nota.Text == "" || cb_disciplina.Text == "")
             {
                 MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_nome.Focus();
+                cb_aluno.Focus();
                 return;
             }
             // Verifica se o username já existe
-            string addAluno = "";
+            string addNota = "";
             string verificaNota = @"
                 SELECT 
                     aluno_id
                 FROM
-                    tb_nota as tbn
-                inner join
-                    tb_aluno as tba ON id_aluno=aluno_id  
+                    tb_nota 
                 WHERE
-                    tba.nome_aluno='"+txt_nome.Text+"' and tbn.disciplina_id="+cb_disciplina.SelectedValue+" and tbn.bimestre_id="+cb_bimestre.SelectedValue+" and tbn.nota="+txt_nota.Text;
+                    aluno_id='"+cb_aluno.SelectedValue+"' and disciplina_id="+cb_disciplina.SelectedValue+" and bimestre_id="+cb_bimestre.SelectedValue;
             dt = Banco.dql(verificaNota);
             if (dt.Rows.Count > 0)
             {
@@ -147,9 +154,76 @@ namespace Project_Odin.Forms
             }
             else
             {
-                addAluno = @"INSERT INTO tb_user (nota, tipo, bimestre_id, aluno_id, disciplina_id) 
-                            VALUES("+txt_nota.Text+", '"+cb_tipoNota.Text+"', "+cb_bimestre.SelectedValue+", "+txt_nome.Text+", "+cb_disciplina.SelectedValue+")";
+                addNota = @"INSERT INTO tb_nota (nota, tipo, bimestre_id, aluno_id, disciplina_id) 
+                VALUES("+txt_nota.Text+", '"+cb_tipoNota.Text+"', "+cb_bimestre.SelectedValue+", "+cb_aluno.SelectedValue+", "+cb_disciplina.SelectedValue+")";
+                MessageBox.Show("Nota Lançada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            Banco.dml(addNota);
+            // Atualiza novamente o DGV
+            addNota = @"SELECT
+                    tbn.id as 'ID',
+                    tba.nome_aluno as 'NOME',
+                    tbb.nome_bimestre as 'BIMESTRE',
+                    tbd.nome as 'DISCIPLINA',
+                    tbn.tipo as 'TIPO',
+                    tbn.nota as 'NOTA'
+                FROM
+                    tb_nota as tbn
+                INNER JOIN
+                    tb_aluno as tba ON tba.id_aluno = tbn.aluno_id
+                INNER JOIN
+                    tb_bimestre as tbb ON tbb.id_bimestre = tbn.bimestre_id
+                INNER JOIN
+                    tb_disciplina as tbd ON tbd.id_disciplina = tbn.disciplina_id
+                ORDER BY
+                    nome_aluno";
+            dgv_nota.DataSource = Banco.dql(addNota);
+            bt_save.Enabled = false;
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
+        }
+
+        private void bt_update_Click(object sender, EventArgs e)
+        {
+            // Verifica se está vazio
+            string addAtualiza;
+            if (cb_aluno.Text == "" || txt_nota.Text == "" || cb_disciplina.Text == "")
+            {
+                MessageBox.Show("Os campos não podem ser vazios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cb_aluno.Focus();
+                return;
+            }
+            else
+            {
+                addAtualiza = @"
+                    UPDATE tb_nota SET
+                        nota=" + txt_nota.Text + ", tipo='" + cb_tipoNota.Text + "', bimestre_id=" + cb_bimestre.SelectedValue + "," +
+                        " aluno_id=" + cb_aluno.SelectedValue + ", disciplina_id=" + cb_disciplina.SelectedValue + " WHERE id=" + idSelecionado;
+                MessageBox.Show("Nota Lançada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            Banco.dml(addAtualiza);
+            // Atualiza novamente o DGV
+            addAtualiza = @"SELECT
+                    tbn.id as 'ID',
+                    tba.nome_aluno as 'NOME',
+                    tbb.nome_bimestre as 'BIMESTRE',
+                    tbd.nome as 'DISCIPLINA',
+                    tbn.tipo as 'TIPO',
+                    tbn.nota as 'NOTA'
+                FROM
+                    tb_nota as tbn
+                INNER JOIN
+                    tb_aluno as tba ON tba.id_aluno = tbn.aluno_id
+                INNER JOIN
+                    tb_bimestre as tbb ON tbb.id_bimestre = tbn.bimestre_id
+                INNER JOIN
+                    tb_disciplina as tbd ON tbd.id_disciplina = tbn.disciplina_id
+                ORDER BY
+                    nome_aluno";
+            dgv_nota.DataSource = Banco.dql(addAtualiza);
+            bt_save.Enabled = false;
+            bt_delete.Enabled = false;
+            bt_update.Enabled = false;
         }
 
         private void bt_delete_Click(object sender, EventArgs e)
@@ -162,14 +236,16 @@ namespace Project_Odin.Forms
                 Banco.dml(vquery);
                 dgv_nota.Rows.Remove(dgv_nota.CurrentRow);
 
-                txt_nome.Clear();
+
+                cb_aluno.SelectedIndex = -1;
                 txt_nota.Clear();
                 cb_disciplina.SelectedIndex = -1;
                 cb_bimestre.SelectedIndex = -1;
                 cb_tipoNota.SelectedIndex = -1;
-                txt_nome.Focus();
+                cb_aluno.Focus();
                 bt_save.Enabled = false;
-        }   }
+            }
+        }
 
         private void dgv_nota_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -192,15 +268,22 @@ namespace Project_Odin.Forms
                     WHERE
                         tbn.id=" + idSelecionado;
                 DataTable dt = Banco.dql(query);
-                txt_nome.Text = dt.Rows[0].Field<string>("nome_aluno");
+                cb_aluno.Text = dt.Rows[0].Field<string>("nome_aluno");
                 cb_disciplina.SelectedValue = dt.Rows[0].Field<Int64>("disciplina_id");
                 cb_bimestre.SelectedValue = dt.Rows[0].Field<Int64>("bimestre_id");
                 cb_tipoNota.Text = dt.Rows[0].Field<string>("tipo");
                 txt_nota.Text = dt.Rows[0].Field<Int64>("nota").ToString();
 
                 bt_delete.Enabled = true;
+                bt_update.Enabled = true;
                 bt_save.Enabled = false;
             }
         }
+
+        private void cb_aluno_TextChanged(object sender, EventArgs e)
+        {
+            BuscarNome();
+        }
+
     }
 }
