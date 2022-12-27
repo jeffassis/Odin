@@ -1,3 +1,5 @@
+using Project_Odin.Forms;
+
 namespace Project_Odin
 {
     public partial class Form1 : Form
@@ -73,6 +75,18 @@ namespace Project_Odin
         {
             F_Aluno f_Aluno = new F_Aluno();
             abreForm(1, f_Aluno);
+        }
+
+        private void notasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            F_Nota f_nota = new F_Nota();
+            abreForm(1, f_nota);
+        }
+
+        private void bt_nota_Click(object sender, EventArgs e)
+        {
+            F_Nota f_nota = new F_Nota();
+            abreForm(1, f_nota);
         }
     }
 }

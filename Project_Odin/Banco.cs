@@ -14,7 +14,7 @@ namespace Project_Odin
         private static SQLiteConnection conexao;
 
         // Abre a conexão com Banco de dados
-        private static SQLiteConnection ConexaoBanco()
+        public static SQLiteConnection ConexaoBanco()
         {
             conexao = new SQLiteConnection("Data Source=" + Globais.caminhoBanco + Globais.nomeBanco);
             conexao.Open();

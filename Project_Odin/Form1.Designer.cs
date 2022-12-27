@@ -57,6 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_nomeUsuario = new System.Windows.Forms.Label();
             this.pane_top = new System.Windows.Forms.Panel();
+            this.bt_nota = new System.Windows.Forms.Button();
             this.bt_aluno = new System.Windows.Forms.Button();
             this.pane_direita = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bt_nota = new System.Windows.Forms.Button();
             this.MenuBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pane_top.SuspendLayout();
@@ -142,29 +142,30 @@
             // 
             this.turmasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.turma;
             this.turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
-            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turmasToolStripMenuItem.Text = "Turmas";
             // 
             // disciplinasToolStripMenuItem
             // 
             this.disciplinasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.disciplina;
             this.disciplinasToolStripMenuItem.Name = "disciplinasToolStripMenuItem";
-            this.disciplinasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.disciplinasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.disciplinasToolStripMenuItem.Text = "Disciplinas";
             // 
             // horariosToolStripMenuItem
             // 
             this.horariosToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.clock;
             this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
-            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.horariosToolStripMenuItem.Text = "Horários";
             // 
             // notasToolStripMenuItem1
             // 
             this.notasToolStripMenuItem1.Image = global::Project_Odin.Properties.Resources.notas;
             this.notasToolStripMenuItem1.Name = "notasToolStripMenuItem1";
-            this.notasToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.notasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.notasToolStripMenuItem1.Text = "Notas";
+            this.notasToolStripMenuItem1.Click += new System.EventHandler(this.notasToolStripMenuItem1_Click);
             // 
             // MenuRelatorio
             // 
@@ -331,6 +332,20 @@
             this.pane_top.Size = new System.Drawing.Size(688, 75);
             this.pane_top.TabIndex = 2;
             // 
+            // bt_nota
+            // 
+            this.bt_nota.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_nota.FlatAppearance.BorderSize = 0;
+            this.bt_nota.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bt_nota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_nota.Image = global::Project_Odin.Properties.Resources.notas_64;
+            this.bt_nota.Location = new System.Drawing.Point(80, 5);
+            this.bt_nota.Name = "bt_nota";
+            this.bt_nota.Size = new System.Drawing.Size(70, 65);
+            this.bt_nota.TabIndex = 1;
+            this.bt_nota.UseVisualStyleBackColor = true;
+            this.bt_nota.Click += new System.EventHandler(this.bt_nota_Click);
+            // 
             // bt_aluno
             // 
             this.bt_aluno.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -452,19 +467,6 @@
             this.label2.Size = new System.Drawing.Size(80, 22);
             this.label2.TabIndex = 0;
             this.label2.Text = "13:00:00";
-            // 
-            // bt_nota
-            // 
-            this.bt_nota.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_nota.FlatAppearance.BorderSize = 0;
-            this.bt_nota.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bt_nota.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_nota.Image = global::Project_Odin.Properties.Resources.notas_64;
-            this.bt_nota.Location = new System.Drawing.Point(80, 5);
-            this.bt_nota.Name = "bt_nota";
-            this.bt_nota.Size = new System.Drawing.Size(70, 65);
-            this.bt_nota.TabIndex = 1;
-            this.bt_nota.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
