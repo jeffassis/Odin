@@ -173,6 +173,26 @@ namespace Project_Odin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imprimir_24 {
+            get {
+                object obj = ResourceManager.GetObject("imprimir_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imprimir_32 {
+            get {
+                object obj = ResourceManager.GetObject("imprimir_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap led_green {
             get {
                 object obj = ResourceManager.GetObject("led_green", resourceCulture);
@@ -276,6 +296,26 @@ namespace Project_Odin.Properties {
         internal static System.Drawing.Bitmap pedagogico {
             get {
                 object obj = ResourceManager.GetObject("pedagogico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pesquisar_24 {
+            get {
+                object obj = ResourceManager.GetObject("pesquisar_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pesquisar_32 {
+            get {
+                object obj = ResourceManager.GetObject("pesquisar_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

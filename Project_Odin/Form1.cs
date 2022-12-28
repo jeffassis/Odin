@@ -94,5 +94,11 @@ namespace Project_Odin
             F_Horario f_horario = new F_Horario();
             abreForm(1, f_horario);
         }
+
+        private void boletimAlunoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            F_BoletimAluno f_BoletimAluno = new F_BoletimAluno();
+            abreForm(0, f_BoletimAluno);
+        }
     }
 }

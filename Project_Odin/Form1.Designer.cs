@@ -142,21 +142,21 @@
             // 
             this.turmasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.turma;
             this.turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
-            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turmasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.turmasToolStripMenuItem.Text = "Turmas";
             // 
             // disciplinasToolStripMenuItem
             // 
             this.disciplinasToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.disciplina;
             this.disciplinasToolStripMenuItem.Name = "disciplinasToolStripMenuItem";
-            this.disciplinasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.disciplinasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.disciplinasToolStripMenuItem.Text = "Disciplinas";
             // 
             // horariosToolStripMenuItem
             // 
             this.horariosToolStripMenuItem.Image = global::Project_Odin.Properties.Resources.clock;
             this.horariosToolStripMenuItem.Name = "horariosToolStripMenuItem";
-            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.horariosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.horariosToolStripMenuItem.Text = "Horários";
             this.horariosToolStripMenuItem.Click += new System.EventHandler(this.horariosToolStripMenuItem_Click);
             // 
@@ -164,7 +164,7 @@
             // 
             this.notasToolStripMenuItem1.Image = global::Project_Odin.Properties.Resources.notas;
             this.notasToolStripMenuItem1.Name = "notasToolStripMenuItem1";
-            this.notasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.notasToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.notasToolStripMenuItem1.Text = "Notas";
             this.notasToolStripMenuItem1.Click += new System.EventHandler(this.notasToolStripMenuItem1_Click);
             // 
@@ -184,7 +184,7 @@
             this.declaraçãoToolStripMenuItem,
             this.historicosToolStripMenuItem});
             this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
-            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.documentosToolStripMenuItem.Text = "Documentos";
             // 
             // declaraçãoToolStripMenuItem
@@ -206,25 +206,26 @@
             this.boletimFinalToolStripMenuItem,
             this.boletimAlunoToolStripMenuItem});
             this.notasToolStripMenuItem.Name = "notasToolStripMenuItem";
-            this.notasToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.notasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.notasToolStripMenuItem.Text = "Notas";
             // 
             // boletimAlunoToolStripMenuItem1
             // 
             this.boletimAlunoToolStripMenuItem1.Name = "boletimAlunoToolStripMenuItem1";
-            this.boletimAlunoToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.boletimAlunoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.boletimAlunoToolStripMenuItem1.Text = "Boletim Aluno";
+            this.boletimAlunoToolStripMenuItem1.Click += new System.EventHandler(this.boletimAlunoToolStripMenuItem1_Click);
             // 
             // boletimFinalToolStripMenuItem
             // 
             this.boletimFinalToolStripMenuItem.Name = "boletimFinalToolStripMenuItem";
-            this.boletimFinalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.boletimFinalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.boletimFinalToolStripMenuItem.Text = "Boletim Final";
             // 
             // boletimAlunoToolStripMenuItem
             // 
             this.boletimAlunoToolStripMenuItem.Name = "boletimAlunoToolStripMenuItem";
-            this.boletimAlunoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.boletimAlunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.boletimAlunoToolStripMenuItem.Text = "Por Disciplina";
             // 
             // MenuFinanceiro

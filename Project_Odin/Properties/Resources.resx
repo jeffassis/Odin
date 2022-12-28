@@ -121,6 +121,9 @@
   <data name="disciplina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\disciplina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pesquisar_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pesquisar_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,20 +175,29 @@
   <data name="bt_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bt_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imprimir_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimir_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_logado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_logado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bt_update_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bt_update_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pesquisar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pesquisar_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="aluno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aluno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="financeiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\financeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="notas_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\notas_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menuUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menuUser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +217,7 @@
   <data name="notas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\notas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="notas_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\notas_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imprimir_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imprimir_24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

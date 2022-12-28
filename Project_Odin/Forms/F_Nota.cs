@@ -63,7 +63,7 @@ namespace Project_Odin.Forms
                 FROM
                     tb_bimestre
                 ORDER BY
-                    nome_bimestre
+                    id_bimestre
             ";
             cb_bimestre.Items.Clear();
             cb_bimestre.DataSource = Banco.dql(queryBimestre);
@@ -107,8 +107,12 @@ namespace Project_Odin.Forms
             vcon.Close();
             dgv_nota.DataSource = dt;
 
-            dgv_nota.Columns[0].Width= 30;
-            dgv_nota.Columns[1].Width= 170;
+            dgv_nota.Columns[0].Width = 30;
+            dgv_nota.Columns[1].Width = 180;
+            dgv_nota.Columns[2].Width = 140;
+            dgv_nota.Columns[3].Width = 80;
+            dgv_nota.Columns[4].Width = 90;
+            dgv_nota.Columns[5].Width = 60;
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -178,6 +182,7 @@ namespace Project_Odin.Forms
                 ORDER BY
                     nome_aluno";
             dgv_nota.DataSource = Banco.dql(addNota);
+            Limpar();
             bt_save.Enabled = false;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
@@ -221,6 +226,7 @@ namespace Project_Odin.Forms
                 ORDER BY
                     nome_aluno";
             dgv_nota.DataSource = Banco.dql(addAtualiza);
+            Limpar();
             bt_save.Enabled = false;
             bt_delete.Enabled = false;
             bt_update.Enabled = false;
@@ -243,6 +249,7 @@ namespace Project_Odin.Forms
                 cb_bimestre.SelectedIndex = -1;
                 cb_tipoNota.SelectedIndex = -1;
                 cb_aluno.Focus();
+                Limpar();
                 bt_save.Enabled = false;
             }
         }
@@ -285,5 +292,13 @@ namespace Project_Odin.Forms
             BuscarNome();
         }
 
+        private void Limpar()
+        {
+            cb_aluno.SelectedIndex= -1;
+            cb_disciplina.SelectedIndex= -1;
+            cb_bimestre.SelectedIndex= -1;
+            cb_tipoNota.SelectedIndex= -1;
+            txt_nota.Clear();
+        }
     }
 }
