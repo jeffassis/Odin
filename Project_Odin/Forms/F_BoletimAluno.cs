@@ -13,7 +13,6 @@ namespace Project_Odin.Forms
 {
     public partial class F_BoletimAluno : Form
     {
-        DataTable dt = new DataTable();
         public F_BoletimAluno()
         {
             InitializeComponent();

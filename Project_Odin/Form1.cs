@@ -100,5 +100,11 @@ namespace Project_Odin
             F_BoletimAluno f_BoletimAluno = new F_BoletimAluno();
             abreForm(0, f_BoletimAluno);
         }
+
+        private void boletimFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_BoletimFinal f_BoletimFinal = new F_BoletimFinal();
+            abreForm(0, f_BoletimFinal);
+        }
     }
 }

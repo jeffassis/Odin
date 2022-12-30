@@ -221,6 +221,7 @@
             this.boletimFinalToolStripMenuItem.Name = "boletimFinalToolStripMenuItem";
             this.boletimFinalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.boletimFinalToolStripMenuItem.Text = "Boletim Final";
+            this.boletimFinalToolStripMenuItem.Click += new System.EventHandler(this.boletimFinalToolStripMenuItem_Click);
             // 
             // boletimAlunoToolStripMenuItem
             // 
